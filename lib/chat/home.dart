@@ -13,6 +13,7 @@ class HomeMessage extends StatefulWidget {
 class _HomeMessageState extends State<HomeMessage> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: AppAssets.bgDark,
       appBar: appBar(),
@@ -23,13 +24,13 @@ class _HomeMessageState extends State<HomeMessage> {
         },
       ),
       floatingActionButton: CircleAvatar(
-        radius: 35,
+        radius: 30,
         backgroundColor: AppAssets.foreColorLightBlue,
-        child: Icon(Icons.add, color: Colors.white, size: 40),
+        child: Icon(Icons.add, color: Colors.white, size: 30),
       ),
       bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 120,
+        width: size.width,
+        height: 70,
         decoration: BoxDecoration(
           border: Border(top: BorderSide(color: Colors.white30)),
         ),
@@ -52,8 +53,8 @@ class _HomeMessageState extends State<HomeMessage> {
       children: [
         SvgPicture.asset(
           nav['icon'],
-          width: 50,
-          height: 50,
+          width: 30,
+          height: 30,
           colorFilter: ColorFilter.mode(
             nav['active'] ? AppAssets.foreColorLightBlue : Colors.white,
             BlendMode.srcIn,
